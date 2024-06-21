@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Информация о банковской карте</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="cardForm">
+      <label for="bank">Название банка:</label>
+      <select id="bank" name="bank" required>
+        <option value="">Выберите банк</option>
+        <option value="альфа">Альфа-банк</option>
+        <option value="тинькофф">Тинькофф банк</option>
+        <option value="сбер">Сбербанк</option>
+      </select>
+      <label for="paymentSystem">Тип платежной системы:</label>
+      <select id="paymentSystem" name="paymentSystem" required>
+        <option value="">Выберите платежную систему</option>
+        <option value="visa">Visa</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="мир">Мир</option>
+      </select>
+      <label for="cardNumber">Номер карты (16 цифр):</label>
+      <input
+        type="text"
+        id="cardNumber"
+        name="cardNumber"
+        pattern="[0-9]*"
+        required
+      />
+      <label for="holderName">Имя держателя карты:</label>
+      <input type="text" id="holderName" name="holderName" required />
+      <div class="calendar-container">
+        <label for="expiryDate">Месяц и год окончания:</label>
+        <input type="date" id="expiryDate" name="expiryDate" class="calendar-input" required />
+      </div>
+
+      <button type="submit">Отправить</button>
+    </form>
+    <div id="cardPreview" class="card">
+      <div class="card-header">
+        <div class="bank-logo"></div>
+        <div class="payment-system-logo"></div>
+      </div>
+      <div class="card-number"></div>
+      <div class="card-holder"></div>
+      <div class="card-expiry"></div>
+    </div>
+    <table id="cardTable">
+      <thead>
+        <tr>
+          <th>Банк</th>
+          <th>Платежная система</th>
+          <th>Номер карты</th>
+          <th>Имя держателя</th>
+          <th>Срок действия</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
